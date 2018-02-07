@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.XRModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Experimental.XR.XRInstance">
+      <summary>
+        <para>An XRInstance is initialized from an XRSubsystemDescriptor for a given XRSubsystem (Example, Input, Environment, Display, etc.) and provides an interface to interact with that given Subsystem until it is Destroyed.  After an XRInstance is created it can be Started or Stopped to turn on and off functionality (and preserve performance).  The base type for XRInstance only exposes this functionality; this class is designed to be a base class for derived classes that expose more functionality specific to a given Subsystem.
+
+            Note: initializing a second XRInstance from the same XRSubsystemDescriptor will return a reference to the existing XRInstance as only one XRInstance is currently allowed for a single Subsystem provider.
+            </para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.XR.XRInstance.Destroy">
+      <summary>
+        <para>Destroys this instance of a subsystem.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.XR.XRInstance.Start">
+      <summary>
+        <para>Starts an instance of a subsystem.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.XR.XRInstance.Stop">
+      <summary>
+        <para>Stops an instance of a subsystem.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Experimental.XR.XRSubsystemDescriptor`1">
+      <summary>
+        <para>Information about a subsystem that can be queried before creating a subsystem instance.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.XR.XRSubsystemDescriptor_1.Create">
+      <summary>
+        <para>Creates an XRInstance from this descriptor.</para>
+      </summary>
+      <returns>
+        <para>Instance of subsystem.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Experimental.XR.XRSubsystemManager">
+      <summary>
+        <para>Gives access to XR related subsystems which provide XR functionality.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.XR.XRSubsystemManager.GetInstances(System.Collections.Generic.List`1&lt;T&gt;)">
+      <summary>
+        <para>Returns active XRInstances of a specific instance type.</para>
+      </summary>
+      <param name="instances">Active instances.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.XR.XRSubsystemManager.GetSubsystemDescriptors(System.Collections.Generic.List`1&lt;T&gt;)">
+      <summary>
+        <para>Returns a list of descriptors which describe XR related functionality that can be enabled.</para>
+      </summary>
+      <param name="descriptors">Subsystem specific descriptors.</param>
+    </member>
+  </members>
+</doc>

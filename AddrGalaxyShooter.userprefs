@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{E2C9FA26-A537-064D-1A3B-1600EB5122CD}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Galaxy Shooter/Scripts/SpawnManager.cs">
+    <Files>
+      <File FileName="Assets/Galaxy Shooter/Scripts/SpawnManager.cs" Line="8" Column="35" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.com.unity.resourcemanager.Editor PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.com.unity.textmeshpro.Editor PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

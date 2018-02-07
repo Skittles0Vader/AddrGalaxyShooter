@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468a46d0ae32c3544b7d98094e6448a9, type: 3}
+  m_Name: AddresableAssetSettings
+  m_EditorClassIdentifier: 
+  pathForAsset: Assets/AddressableAssetsData/AddresableAssetSettings.asset
+  m_groups:
+  - name: Built In Data
+    guid: 3a525c2f83f9942f1a678eef943fa57d
+    m_serializeEntries:
+    - m_guid: Resources
+      m_address: Resources
+      m_readOnly: 1
+      m_serializedLabels: []
+    - m_guid: EditorSceneList
+      m_address: EditorSceneList
+      m_readOnly: 1
+      m_serializedLabels: []
+    processor: {fileID: 11400000, guid: 3a525c2f83f9942f1a678eef943fa57d, type: 2}
+    isDefault: 0
+    readOnly: 1
+  - name: Default Local Group
+    guid: 250f28275fb9842daa7312d15c210267
+    m_serializeEntries:
+    - m_guid: 2be2138676b8d47e08676a11f77f7d66
+      m_address: Galaxy
+      m_readOnly: 0
+      m_serializedLabels: []
+    - m_guid: f90a5cb30a2b54f15a91c094e3e54bf9
+      m_address: Player
+      m_readOnly: 0
+      m_serializedLabels: []
+    processor: {fileID: 11400000, guid: 250f28275fb9842daa7312d15c210267, type: 2}
+    isDefault: 1
+    readOnly: 0
+  - name: Remote Packed Content Group
+    guid: 8854e631d2a9143739dd9819611d7f63
+    m_serializeEntries:
+    - m_guid: e711f7ecf0a124a85a5ef1199ea688aa
+      m_address: Enemy
+      m_readOnly: 0
+      m_serializedLabels: []
+    - m_guid: fcef8cb66946d411c86cbcaeaf017315
+      m_address: Shield_PowerUp
+      m_readOnly: 0
+      m_serializedLabels:
+      - powerups
+    - m_guid: 2fd3f993c91af4c10a99a4f42ca4267c
+      m_address: Speed_PowerUp
+      m_readOnly: 0
+      m_serializedLabels:
+      - powerups
+    - m_guid: 20964c29ef27549bfba804909ec135b0
+      m_address: Triple_Shot_PowerUp
+      m_readOnly: 0
+      m_serializedLabels:
+      - powerups
+    processor: {fileID: 11400000, guid: 8854e631d2a9143739dd9819611d7f63, type: 2}
+    isDefault: 0
+    readOnly: 0
+  m_buildSettings:
+    deduplicationMode: 0
+    aggressiveObjectDepude: 0
+    useCache: 0
+    postProfilerEvents: 1
+    compression:
+      compression: 3
+      level: 5
+      blockSize: 131072
+    appendBuildTargetToBundlePaths: 1
+    bundleBuildPath: Temp/AddressableAssetsBundles
+    sharedBundleTargetGroup: 0
+    resourceProviderMode: 2
+    localLoadSpeed: 10485760
+    remoteLoadSpeed: 322560
+    forceRebuildData: 0
+    downloadRemoteCatalog: 0
+    remoteCatalogLocation:
+      m_custom: 0
+      m_value: 
+    remoteCatalogProvider:
+      m_custom: 0
+      m_value: 
+    remoteCatalogBuildLocation:
+      m_custom: 0
+      m_value: 
+  m_profileSettings:
+    m_profiles:
+    - parent: 
+      id: 3a3d01745e5754b72be0704f1ce9e53b
+      name: Default
+      values:
+      - name: BuildTarget
+        value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - name: StreamingAsssetsBuildPath
+        value: Assets/StreamingAssets
+      - name: StreamingAssetsLoadPrefix
+        value: '{UnityEngine.Application.streamingAssetsPath}'
+      - name: RemoteBuildPath
+        value: ServerData
+      - name: RemoteLoadPrefix
+        value: http://localhost
+      - name: RemoteCatalogURL
+        value: '[RemoteLoadPrefix]/[BuildTarget]/catalog.json'
+      - name: RemoteCatalogProvider
+        value: ResourceManagment.ResourceProviders.JSONAssetProvider
+    - parent: 3a3d01745e5754b72be0704f1ce9e53b
+      id: 7e95c99765cd041ec926449edc66fe85
+      name: Dev
+      values:
+      - name: RemoteBuildPath
+        value: DevServerData
+      - name: RemoteLoadPrefix
+        value: http://devserver
+    - parent: 3a3d01745e5754b72be0704f1ce9e53b
+      id: b920096da920b45da9f14be739c88230
+      name: Production
+      values:
+      - name: RemoteBuildPath
+        value: ProductionServerData
+      - name: RemoteLoadPrefix
+        value: http://productionserver
+  m_labelTable:
+    m_labelNames:
+    - default
+    - powerups
+  m_activeProfileId: 3a3d01745e5754b72be0704f1ce9e53b

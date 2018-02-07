@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31f4034e6caaf54eb2cd9966061bdba, type: 3}
+  m_Name: 8854e631d2a9143739dd9819611d7f63
+  m_EditorClassIdentifier: 
+  buildPath:
+    m_custom: 0
+    m_value: StreamingAsssetsBuildPath
+  loadPrefix:
+    m_custom: 0
+    m_value: StreamingAssetsLoadPrefix
+  bundleMode: 0
+  position: {x: 0, y: 0}
