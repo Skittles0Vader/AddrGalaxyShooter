@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{616EE6D3-81B2-E1E9-9701-8F19FD322899}</ProjectGuid>
+    <ProjectGuid>{249BE671-9B61-91A5-17D6-D573B66F41AA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -372,9 +372,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Mon-22Jan_GalaxyShoot-Addr.csproj">
-      <Project>{522CBDBA-CB4F-3A66-CE38-C381C882A64B}</Project>
-      <Name>Mon-22Jan_GalaxyShoot-Addr</Name>
+    <ProjectReference Include="AddrGalaxyShooter.csproj">
+      <Project>{E2162F06-EA01-0523-5979-885D9687A314}</Project>
+      <Name>AddrGalaxyShooter</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.textmeshpro.Editor.csproj">
+      <Project>{5137E766-79E4-09CA-0E2D-8D63F9E9EFAB}</Project>
+      <Name>com.unity.textmeshpro.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ResourceManager.csproj">
       <Project>{55E09CD0-87E7-EFE2-4146-817A9E4FFB6D}</Project>
@@ -383,10 +387,6 @@
     <ProjectReference Include="Unity.ResourceManager.Editor.csproj">
       <Project>{39F725F8-318E-ED5C-F2FB-B1503576B0E4}</Project>
       <Name>Unity.ResourceManager.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.unity.textmeshpro.Editor.csproj">
-      <Project>{5137E766-79E4-09CA-0E2D-8D63F9E9EFAB}</Project>
-      <Name>com.unity.textmeshpro.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="com.unity.textmeshpro.Runtime.csproj">
       <Project>{4B393C84-8449-8C37-AF44-1215C0E97050}</Project>

@@ -21,15 +21,17 @@ namespace EditorDiagnostics
         }
         Dictionary<int, bool> maximizedState = new Dictionary<int, bool>();
         Func<string, bool> filterFunc;
+        IComparer<EventDataCollection.PlayerSession.DataSet> dataSetComparer;
         EventDataCollection.PlayerSession m_data;
         float textHeight;
         int m_inspectFrame = -1;
         public int visibleStartTime = 0;
         public int visibleDuration = 300;
-        internal EventGraphListView(EventDataCollection.PlayerSession data, TreeViewState tvs, MultiColumnHeaderState mchs, Func<string, bool> filter) : base(tvs, new MultiColumnHeader(mchs))
+        internal EventGraphListView(EventDataCollection.PlayerSession data, TreeViewState tvs, MultiColumnHeaderState mchs, Func<string, bool> filter, IComparer<EventDataCollection.PlayerSession.DataSet> dsComparer) : base(tvs, new MultiColumnHeader(mchs))
         {
             showBorder = true;
             m_data = data;
+            dataSetComparer = dsComparer;
             filterFunc = filter;
             textHeight = EditorStyles.label.CalcHeight(GUIContent.none, 1000);
             columnIndexForTreeFoldouts = 1;
@@ -46,17 +48,27 @@ namespace EditorDiagnostics
             if (!root.m_entry.hasChildren)
                 return root;
 
+            List<EventDataCollection.PlayerSession.DataSet> entries = new List<EventDataCollection.PlayerSession.DataSet>();
             foreach (var e in root.m_entry.m_children)
             {
                 if (!e.Value.HasDataAfterFrame(visibleStartTime))
                     continue;
                 if (filterFunc(e.Value.graph))
                 {
-                    var item = new DataStreamEntry(e.Value, root.depth + 1);
-                    root.AddChild(item);
-                    AddItems(item);
+                    entries.Add(e.Value);
                 }
             }
+
+            if (dataSetComparer != null)
+                entries.Sort(dataSetComparer);
+
+            foreach (var e in entries)
+            {
+                var dse = new DataStreamEntry(e, root.depth + 1);
+                root.AddChild(dse);
+                AddItems(dse);
+            }
+
             return root;
         }
 

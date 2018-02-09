@@ -12,7 +12,8 @@ namespace ResourceManagement.ResourceProviders.Simulation
         public string[] sceneGUIDS;
         public int remoteLoadSpeed = 1024 * 100;
         public int localLoadSpeed = 1024 * 1024 * 10;
-        const string PlayerLocation = "Assets/StreamingAssets/VirtualAssetBundleData.json";
+        public static string PlayerLocation { get { return Path.Combine(Application.streamingAssetsPath, "VirtualAssetBundleData.json").Replace('\\', '/'); } }
+
         public VirtualAssetBundleRuntimeData() {}
         public VirtualAssetBundleRuntimeData(int localSpeed, int remoteSpeed)
         {
@@ -28,9 +29,8 @@ namespace ResourceManagement.ResourceProviders.Simulation
                     return null;
                 return JsonUtility.FromJson<VirtualAssetBundleRuntimeData>(File.ReadAllText(PlayerLocation));
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Debug.Log("Unable to load VirtualAssetBundleData from " + PlayerLocation + ", Exception: " + e);
             }
             return null;
         }

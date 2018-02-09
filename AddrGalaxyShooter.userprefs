@@ -1,7 +1,8 @@
-﻿<Properties StartupConfiguration="{E2C9FA26-A537-064D-1A3B-1600EB5122CD}|Unit Tests">
+﻿<Properties StartupConfiguration="{E4BBD1A2-59E9-8D1A-2FD6-A3B5DE1B29EC}|Unit Tests">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Galaxy Shooter/Scripts/SpawnManager.cs">
     <Files>
-      <File FileName="Assets/Galaxy Shooter/Scripts/SpawnManager.cs" Line="8" Column="35" />
+      <File FileName="Assets/Galaxy Shooter/Scripts/SpawnManager.cs" Line="13" Column="1" />
+      <File FileName="Assets/AddressableAssets-master/Editor/GUI/AddressableAssetsSettingsConfigEditor.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.com.unity.resourcemanager.Editor PreferredExecutionTarget="Unity.Editor" />
@@ -10,7 +11,7 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.com.unity.textmeshpro.Editor PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.AddrGalaxyShooter PreferredExecutionTarget="Unity.Editor" />
 </Properties>

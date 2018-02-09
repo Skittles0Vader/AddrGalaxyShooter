@@ -31,7 +31,6 @@ namespace AddressableAssets
 
         internal override void CreateResourceLocationData(
             AddressableAssetSettings settings,
-            ResourceManagerRuntimeData runtimeData,
             AddressableAssetSettings.AssetGroup assetGroup,
             string bundleName,
             List<GUID> assetsInBundle,
@@ -45,7 +44,7 @@ namespace AddressableAssets
                 var assetEntry = settings.FindAssetEntry(a.ToString());
                 if (assetEntry == null)
                     continue;
-                runtimeData.contentCatalog.locations.Add(new ResourceLocationData(assetEntry.address, assetEntry.guid, assetEntry.assetPath, GetAssetLoadProvider(settings), ResourceLocationData.LocationType.String, settings.labelTable.GetMask(assetEntry.labels), AssetDatabase.GetMainAssetTypeAtPath(assetEntry.assetPath).FullName, assetsToBundles[a].ToArray()));
+                locations.Add(new ResourceLocationData(assetEntry.address, assetEntry.guid, assetEntry.assetPath, GetAssetLoadProvider(settings), ResourceLocationData.LocationType.String, settings.labelTable.GetMask(assetEntry.labels), AssetDatabase.GetMainAssetTypeAtPath(assetEntry.assetPath).FullName, assetsToBundles[a].ToArray()));
             }
         }
 

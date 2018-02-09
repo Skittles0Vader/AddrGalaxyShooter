@@ -73,6 +73,9 @@ namespace AddressableAssets
         [RuntimeInitializeOnLoadMethod]
         public static void InitializeResourceManager()
         {
+            EditorDiagnostics.EventCollector.profileEvents = true;
+            ResourceManager.m_postEvents = true;
+
             ResourceManager.resourceLocators.Add(new ResourceLocationLocator());
             ResourceManager.resourceProviders.Add(new JSONAssetProvider());
             var runtimeDataLocation = new ResourceLocationBase<string>("runtimedata", "file://" + PlayerLocation, typeof(JSONAssetProvider).FullName);
@@ -160,8 +163,11 @@ namespace AddressableAssets
             {
                 var deps = kvp.Value.dependencies;
                 var data = dataMap[kvp.Key];
-                foreach (var d in data.dependencies)
-                    kvp.Value.dependencies.Add(locMap[d]);
+                if (data.dependencies != null)
+                {
+                    foreach (var d in data.dependencies)
+                        kvp.Value.dependencies.Add(locMap[d]);
+                }
             }
 
             //put them in the correct lookup table

@@ -116,8 +116,10 @@ namespace EditorDiagnostics
                         return samples.Count > 0 && samples[samples.Count - 1].frame > frame;
                     }
                 }
+
                 [SerializeField]
                 List<DataStream> m_streams = new List<DataStream>();
+                int m_firstSampleFrame = int.MaxValue;
                 public string name;
                 public string graph;
                 public Dictionary<string, DataSet> m_children = null;
@@ -134,7 +136,10 @@ namespace EditorDiagnostics
                     }
                     return false;
                 }
-
+                internal int FirstSampleFrame
+                {
+                    get { return m_firstSampleFrame; }
+                }
                 public bool hasChildren { get { return m_children != null && m_children.Count > 0; } }
                 public DataSet() {}
                 public DataSet(string n, string g)
@@ -165,6 +170,8 @@ namespace EditorDiagnostics
 
                 internal void AddSample(int stream, int frame, int val)
                 {
+                    if (frame < m_firstSampleFrame)
+                        m_firstSampleFrame = frame;
                     while (stream >= m_streams.Count)
                         m_streams.Add(null);
                     if (m_streams[stream] == null)
@@ -198,6 +205,7 @@ namespace EditorDiagnostics
 
                 internal void Clear()
                 {
+                    m_firstSampleFrame = int.MaxValue;
                     m_children.Clear();
                     m_streams.Clear();
                 }

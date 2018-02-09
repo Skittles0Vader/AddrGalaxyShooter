@@ -67,7 +67,7 @@ MonoBehaviour:
     isDefault: 0
     readOnly: 0
   m_buildSettings:
-    deduplicationMode: 0
+    deduplicationMode: 2
     aggressiveObjectDepude: 0
     useCache: 0
     postProfilerEvents: 1
@@ -78,7 +78,7 @@ MonoBehaviour:
     appendBuildTargetToBundlePaths: 1
     bundleBuildPath: Temp/AddressableAssetsBundles
     sharedBundleTargetGroup: 0
-    resourceProviderMode: 2
+    resourceProviderMode: 1
     localLoadSpeed: 10485760
     remoteLoadSpeed: 322560
     forceRebuildData: 0
@@ -94,40 +94,26 @@ MonoBehaviour:
       m_value: 
   m_profileSettings:
     m_profiles:
-    - parent: 
-      id: 3a3d01745e5754b72be0704f1ce9e53b
-      name: Default
-      values:
-      - name: BuildTarget
-        value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
-      - name: StreamingAsssetsBuildPath
-        value: Assets/StreamingAssets
-      - name: StreamingAssetsLoadPrefix
-        value: '{UnityEngine.Application.streamingAssetsPath}'
-      - name: RemoteBuildPath
-        value: ServerData
-      - name: RemoteLoadPrefix
-        value: http://localhost
-      - name: RemoteCatalogURL
-        value: '[RemoteLoadPrefix]/[BuildTarget]/catalog.json'
-      - name: RemoteCatalogProvider
-        value: ResourceManagment.ResourceProviders.JSONAssetProvider
-    - parent: 3a3d01745e5754b72be0704f1ce9e53b
-      id: 7e95c99765cd041ec926449edc66fe85
-      name: Dev
-      values:
-      - name: RemoteBuildPath
-        value: DevServerData
-      - name: RemoteLoadPrefix
-        value: http://devserver
-    - parent: 3a3d01745e5754b72be0704f1ce9e53b
-      id: b920096da920b45da9f14be739c88230
-      name: Production
-      values:
-      - name: RemoteBuildPath
-        value: ProductionServerData
-      - name: RemoteLoadPrefix
-        value: http://productionserver
+    - m_parent: 
+      m_id: 
+      m_name: 
+      m_values: []
+    - m_parent: 
+      m_id: 
+      m_name: 
+      m_values: []
+    - m_parent: 
+      m_id: 
+      m_name: 
+      m_values: []
+    - m_parent: 
+      m_id: 077b702fafb084635a51835c110790e4
+      m_name: development
+      m_values: []
+    - m_parent: 
+      m_id: 42635204d6a444ea89c7a7c22fdec6c2
+      m_name: Production
+      m_values: []
   m_labelTable:
     m_labelNames:
     - default

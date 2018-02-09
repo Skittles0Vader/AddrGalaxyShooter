@@ -27,7 +27,7 @@ namespace AddressableAssets
         {
         }
 
-        internal virtual void CreateResourceLocationData(AddressableAssetSettings settings, ResourceManagerRuntimeData runtimeData, AddressableAssetSettings.AssetGroup assetGroup, string bundleName, List<GUID> assetsInBundle, Dictionary<GUID, List<string>> assetsToBundles, List<ResourceLocationData> locations)
+        internal virtual void CreateResourceLocationData(AddressableAssetSettings settings, AddressableAssetSettings.AssetGroup assetGroup, string bundleName, List<GUID> assetsInBundle, Dictionary<GUID, List<string>> assetsToBundles, List<ResourceLocationData> locations)
         {
         }
 

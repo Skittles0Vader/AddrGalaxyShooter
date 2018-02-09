@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour {
     public string[] spawnAtStart;
 
     private float topbound = 7.0f;
-    private float bottombound = -7.0f;
+    // private float bottombound = -7.0f;
     private float leftbound = -7.0f;
     private float rightbound = 7.0f;
     private int startupSpawnCount = 0;

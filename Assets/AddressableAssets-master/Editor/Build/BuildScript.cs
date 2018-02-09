@@ -77,20 +77,6 @@ namespace AddressableAssets
                 return dependencyInfo;
 
             var startTime = Time.realtimeSinceStartup;
-#if LIVE_PREVIEW
-
-            if( isPlayerBuild && EditorUserBuildSettings.datalessPlayer && isDevBuild)
-            {
-                var rtd = new ResourceManagerRuntimeData(ResourceManagerRuntimeData.ProviderMode.AssetBundles);
-                rtd.datalessPlayer = true;
-                rtd.profileEvents = false;
-                rtd.sessionId = BuildPipeline.GetSessionIdForBuildTarget(target);
-                rtd.contentCatalog.locations.AddRange(GenerateSimpleLocations<LivePreviewProvider>(aaSettings, true));
-                rtd.contentCatalog.tagGroups = aaSettings.tagTable.m_tagNames;
-                rtd.Save("datalessPlayer");
-                return dependencyInfo;
-            }
-#endif
             var settingsHash = aaSettings.currentHash.ToString();
             ResourceManagerRuntimeData runtimeData = null;
             if (!aaSettings.buildSettings.forceRebuildData)
@@ -231,7 +217,7 @@ namespace AddressableAssets
                         assetGroupToBundle.Add(assetGroup, bundles = new List<string>());
                     bundles.Add(kvp.Key);
 
-                    assetGroup.processor.CreateResourceLocationData(settings, runtimeData, assetGroup, kvp.Key, kvp.Value, buildInfo.assetToBundles, runtimeData.contentCatalog.locations);
+                    assetGroup.processor.CreateResourceLocationData(settings,  assetGroup, kvp.Key, kvp.Value, buildInfo.assetToBundles, runtimeData.contentCatalog.locations);
                 }
             }
         }
@@ -254,6 +240,12 @@ namespace AddressableAssets
         {
             BuildWriteInfo cmdSet;
             UnityEditor.Build.AssetBundle.Shared.BundlePackingStep.Build(buildDependencyInfo, out cmdSet, useCache, progress);
+            foreach (var b in buildDependencyInfo.bundleToAssets)
+            {
+                var bundleFolder = System.IO.Path.GetDirectoryName(System.IO.Path.Combine(bundleBuildPath, b.Key));
+                if (!System.IO.Directory.Exists(bundleFolder))
+                    System.IO.Directory.CreateDirectory(bundleFolder);
+            }
             BuildResultInfo result;
             UnityEditor.Build.AssetBundle.Shared.BundleWritingStep.Build(buildSettings, compression, bundleBuildPath, buildDependencyInfo, cmdSet, out result, useCache, progress);
             return result;

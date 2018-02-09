@@ -77,7 +77,7 @@ namespace ResourceManagement.ResourceProviders.Simulation
 
         public static void AddProviders()
         {
-            var virtualBundleData = JsonUtility.FromJson<VirtualAssetBundleRuntimeData>(System.IO.File.ReadAllText(Application.streamingAssetsPath + "/VirtualAssetBundleData.json"));
+            var virtualBundleData = VirtualAssetBundleRuntimeData.Load();
             if (virtualBundleData != null)
             {
                 var go = new GameObject("AssetBundleSimulator", typeof(VirtualAssetBundleManager));

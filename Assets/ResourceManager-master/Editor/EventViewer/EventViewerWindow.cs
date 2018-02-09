@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace EditorDiagnostics
 {
-    public class EventViewerWindow : EditorWindow
+    public class EventViewerWindow : EditorWindow, IComparer<EventDataCollection.PlayerSession.DataSet>
     {
         [SerializeField]
         EventDataCollection eventData;
@@ -93,6 +93,14 @@ namespace EditorDiagnostics
                 return;
             var evt = DiagnosticEvent.Deserialize(args.data);
             eventData.ProcessEvent(evt, args.playerId);
+        }
+
+        public int Compare(EventDataCollection.PlayerSession.DataSet x, EventDataCollection.PlayerSession.DataSet y)
+        {
+            int vx = (x.graph == "EventCount" ? -10000 : x.FirstSampleFrame);
+            int vy = (y.graph == "EventCount" ? -10000 : y.FirstSampleFrame);
+            
+            return vx - vy;
         }
 
         protected virtual bool CanHandleEvent(string graph)
@@ -329,7 +337,7 @@ namespace EditorDiagnostics
                     MultiColumnHeaderState.OverwriteSerializedFields(m_graphListMCHS, headerState);
 
                 m_graphListMCHS = headerState;
-                m_graphList = new EventGraphListView(activeSession, m_graphListTreeViewState, m_graphListMCHS, CanHandleEvent);
+                m_graphList = new EventGraphListView(activeSession, m_graphListTreeViewState, m_graphListMCHS, CanHandleEvent, this);
                 InitializeGraphView(m_graphList);
                 m_graphList.Reload();
             }

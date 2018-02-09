@@ -20,7 +20,7 @@ namespace AddressableAssets
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            label.text = property.propertyPath;
+            label.text = ObjectNames.NicifyVariableName(property.propertyPath);
             EditorGUI.BeginProperty(position, label, property);
 
             GatherFilters(property, out labelFilter, out typeFilter);
